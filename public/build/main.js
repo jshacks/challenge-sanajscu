@@ -24,30 +24,30 @@ webpackJsonp([0,1],[
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Achizitii = __webpack_require__(22);
+	var _Achizitii = __webpack_require__(9);
 
 	var _Achizitii2 = _interopRequireDefault(_Achizitii);
 
-	var _Header = __webpack_require__(9);
+	var _Header = __webpack_require__(11);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Sidebar = __webpack_require__(12);
+	var _Sidebar = __webpack_require__(14);
 
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
-	var _MainContent = __webpack_require__(15);
+	var _MainContent = __webpack_require__(17);
 
 	var _MainContent2 = _interopRequireDefault(_MainContent);
 
-	var _Footer = __webpack_require__(18);
+	var _Footer = __webpack_require__(20);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Styles
-	__webpack_require__(21);
+	__webpack_require__(23);
 	// Le Imports 
 
 	// Config 
@@ -11117,12 +11117,48 @@ webpackJsonp([0,1],[
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(10)
+	__vue_template__ = __webpack_require__(10)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-023e3c1e/Achizitii.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<h1>Pagina achizitii</h1>\n";
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__vue_script__ = __webpack_require__(12)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] resources/assets/js/components/Header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(11)
+	__vue_template__ = __webpack_require__(13)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -11147,7 +11183,7 @@ webpackJsonp([0,1],[
 	})()}
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11190,23 +11226,23 @@ webpackJsonp([0,1],[
 	// </script>
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<header>\n\t<nav class=\"nav has-shadow\">\n\t\t<div class=\"container is-fluid\">\n\t\t\t<div class=\"nav-left\">\n\t\t\t  <router-link to=\"/\" class=\"nav-item is-brand\">\n\t\t\t      <h1>SANAJSCU</h1>\n\t\t      </router-link>\n\t\t    </div>\n\n\t\t\t<span class=\"nav-toggle\">\n\t\t\t\t<span></span>\n\t\t\t\t<span></span>\n\t\t\t\t<span></span>\n\t\t\t</span>\n\n\t\t\t<div class=\"nav-right nav-menu\">\n\t\t\t\t<router-link to=\"/\" exact class=\"nav-item is-tab\" active-class=\"is-active\">Acasa</router-link>\n\t\t\t\t<router-link to=\"/about\" class=\"nav-item is-tab\" active-class=\"is-active\">Despre</router-link>\n\t\t\t</div>\n\t\t</div>\n\t</nav>\n</header>\n";
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(13)
+	__vue_script__ = __webpack_require__(15)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] resources/assets/js/components/Sidebar.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(14)
+	__vue_template__ = __webpack_require__(16)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -11231,7 +11267,7 @@ webpackJsonp([0,1],[
 	})()}
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11240,12 +11276,29 @@ webpackJsonp([0,1],[
 	    value: true
 	});
 	// <template>
-	//     <div class="column is-2 sidebar">
-	// 		<a class="button is-success" href="#">Button 1</a>
-	// 		<a class="button is-success" href="#">Button 2</a>
-	// 		<a class="button is-success" href="#">Button 3</a>
-	// 		<a class="button is-success" href="#">Button 4</a>
-	// 	</div>
+	//     <aside class="menu">
+	//       <p class="menu-label">
+	//         Statistici
+	//       </p>
+	//       <ul class="menu-list">
+	//         <li><a href="#">Achizitii</a></li>
+	//         <li><a href="#">Epidemii</a></li>
+	//         <li><a href="#">Spitale</a></li>
+	//       </ul>
+	//       <p class="menu-label">
+	//         Alerte
+	//       </p>
+	//       <ul class="menu-list">
+	//         <li><a href="#">Team Settings</a></li>
+	//         <li>
+	//           <a class="is-active" href="#">Manage Your Team</a>
+	//           <ul>
+	//             <li><a href="#">Members</a></li>
+	//             <li><a href="#">Plugins</a></li>
+	//             <li><a href="#">Add a member</a></li>
+	//           </ul>
+	//         </li>
+	//       </ul>
 	// </template>
 	//
 	// <script>
@@ -11257,23 +11310,23 @@ webpackJsonp([0,1],[
 	// </script>
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports) {
 
-	module.exports = "\n    <div class=\"column is-2 sidebar\">\n\t\t<a class=\"button is-success\" href=\"#\">Button 1</a>\n\t\t<a class=\"button is-success\" href=\"#\">Button 2</a>\n\t\t<a class=\"button is-success\" href=\"#\">Button 3</a>\n\t\t<a class=\"button is-success\" href=\"#\">Button 4</a>\n\t</div>\n";
+	module.exports = "\n<aside class=\"menu\">\n  <p class=\"menu-label\">\n    Statistici\n  </p>\n  <ul class=\"menu-list\">\n    <li><a href=\"#\">Achizitii</a></li>\n    <li><a href=\"#\">Epidemii</a></li>\n    <li><a href=\"#\">Spitale</a></li>\n  </ul>\n  <p class=\"menu-label\">\n    Alerte\n  </p>\n  <ul class=\"menu-list\">\n    <li><a href=\"#\">Team Settings</a></li>\n    <li>\n      <a class=\"is-active\" href=\"#\">Manage Your Team</a>\n      <ul>\n        <li><a href=\"#\">Members</a></li>\n        <li><a href=\"#\">Plugins</a></li>\n        <li><a href=\"#\">Add a member</a></li>\n      </ul>\n    </li>\n  </ul>\n";
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(16)
+	__vue_script__ = __webpack_require__(18)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] resources/assets/js/components/MainContent.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(17)
+	__vue_template__ = __webpack_require__(19)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -11298,7 +11351,7 @@ webpackJsonp([0,1],[
 	})()}
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11321,23 +11374,23 @@ webpackJsonp([0,1],[
 	// </script>
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = "\n    <div class=\"column\">\n\t\t<slot></slot>\n\t</div>\n";
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(19)
+	__vue_script__ = __webpack_require__(21)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] resources/assets/js/components/Footer.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(20)
+	__vue_template__ = __webpack_require__(22)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -11362,7 +11415,7 @@ webpackJsonp([0,1],[
 	})()}
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11397,52 +11450,16 @@ webpackJsonp([0,1],[
 	// </script>
 
 /***/ },
-/* 20 */
+/* 22 */
 /***/ function(module, exports) {
 
 	module.exports = "\n    <footer class=\"footer\">\n\t  <div class=\"container\">\n\t    <div class=\"content has-text-centered\">\n\t      <p>\n\t        <strong>SANAJSCU</strong> The source code is licensed\n\t        <a href=\"http://opensource.org/licenses/mit-license.php\">MIT</a>.\n\t      </p>\n\t      <p>\n\t        <a class=\"icon\" href=\"https://github.com/jshacks/challenge-sanajscu\">\n\t          <i class=\"fa fa-github\"></i>\n\t        </a>\n\t      </p>\n\t    </div>\n\t  </div>\n\t</footer>\n";
 
 /***/ },
-/* 21 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__vue_template__ = __webpack_require__(23)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-023e3c1e/Achizitii.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
 /* 23 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<h1>Pagina achizitii</h1>\n";
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 ]);

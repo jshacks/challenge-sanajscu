@@ -10,7 +10,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        {{-- {{ Html::style(elixir('main.css')) }} --}}
+        {{ Html::style(elixir('main.css')) }}
 
         <script type="text/javascript">
             JsHacks = {
@@ -20,9 +20,7 @@
 
     </head>
     <body>
-        <div id="app">
-            <header-top></header-top>
-        </div>
+        <div id="app"><router-view></router-view></div>
         {{ Html::script(elixir('commons.js')) }}
         {{ Html::script(elixir('main.js')) }}
     </body>

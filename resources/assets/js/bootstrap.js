@@ -18,6 +18,7 @@ window.$ = window.jQuery = require('jquery');
 
 window.Vue = require('vue');
 require('vue-resource');
+require('vue-router');
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
@@ -26,7 +27,7 @@ require('vue-resource');
  */
 
 Vue.http.interceptors.push((request, next) => {
-    request.headers.set('X-CSRF-TOKEN', Laravel.csrfToken);
+    request.headers.set('X-CSRF-TOKEN', JsHacks.token_);
 
     next();
 });

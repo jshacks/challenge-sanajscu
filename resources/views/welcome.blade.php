@@ -12,9 +12,17 @@
 
         {{-- {{ Html::style(elixir('main.css')) }} --}}
 
+        <script type="text/javascript">
+            JsHacks = {
+                token_ : '{{ csrf_token() }}',
+            }
+        </script>
+
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <header-top></header-top>
+        </div>
         {{ Html::script(elixir('commons.js')) }}
         {{ Html::script(elixir('main.js')) }}
     </body>

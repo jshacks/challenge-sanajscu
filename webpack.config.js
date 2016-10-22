@@ -30,6 +30,7 @@ module.exports = {
     moduleDirectories: path.resolve(__dirname, '/node_modules/'),
     extensions: ['', '.js', '.vue', '.scss'],
     alias: {
+      vue: 'vue/dist/vue.js',
       'styles': path.resolve(__dirname, './resources/assets/sass'),
       'src': path.resolve(__dirname, './resources/assets/js'),
       'filters': path.resolve(__dirname, './resources/js/js/filters'),

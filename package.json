@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "webpack -p --process --colors",
-    "dev": "php artisan serve | webpack --watch --progress --colors"
+    "dev": "webpack --watch --progress --colors"
   },
   "repository": {
     "type": "git",

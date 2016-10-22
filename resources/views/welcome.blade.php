@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
 
         {{ Html::style(elixir('main.css')) }}
 
@@ -33,5 +34,7 @@
         </div>
         {{ Html::script(elixir('commons.js')) }}
         {{ Html::script(elixir('main.js')) }}
+
+        <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
     </body>
 </html>

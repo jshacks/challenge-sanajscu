@@ -19,12 +19,19 @@ Vue.http.interceptors.push((request, next) => {
  * the body of the page. From here, you may begin adding components to
  * the application, or feel free to tweak this setup for your needs.
  */
-import App from './components/App.vue'
-import Achizitii from './components/Achizitii.vue'
+import App from './App.vue'
+import About from 'pages/About.vue'
+import Achizitii from 'pages/Achizitii.vue'
+
+import mainHeader from 'src/components/Header.vue'
+import mainSidebar from 'src/components/Sidebar.vue'
+import mainContent from 'src/components/MainContent.vue'
+import mainFooter from 'src/components/Footer.vue'
 
 
 const routes = [
   { path: '/', component: App },
+  { path: '/about', component: About },
   { path: '/achizitii', component: Achizitii },
 ]
 
@@ -34,6 +41,12 @@ const router = new VueRouter({
 
 new Vue({
   el: '#app',
-  router
+  router,
+  components: {
+  	mainHeader,
+	mainSidebar,
+	mainContent,
+	mainFooter
+  }
 })
  

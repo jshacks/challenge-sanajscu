@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
-        Le content
-    </div>
+    <div class="column">
+		<slot></slot>
+	</div>
 </template>
 
 <script>

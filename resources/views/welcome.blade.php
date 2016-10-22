@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
         {{ Html::style(elixir('main.css')) }}
 
@@ -20,7 +21,16 @@
 
     </head>
     <body>
-        <div id="app"><router-view></router-view></div>
+        <div id="app">
+            <main-header></main-header>
+            <section class="section">
+                <div class="columns main-container">
+                    <main-sidebar></main-sidebar>
+                    <main-content><router-view></router-view></main-content>
+                </div>
+            </section>
+            <main-footer></main-footer>
+        </div>
         {{ Html::script(elixir('commons.js')) }}
         {{ Html::script(elixir('main.js')) }}
     </body>

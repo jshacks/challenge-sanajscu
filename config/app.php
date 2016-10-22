@@ -167,6 +167,8 @@ return [
         Dingo\Api\Provider\LaravelServiceProvider::class,
         // CSV Reader
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        // Laravel HTML/FORM helpers
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -233,6 +235,8 @@ return [
 
         // CSV
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        // Laravel HTML/FORM helpers
+        'Form' => Collective\Html\FormFacade::class, 'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

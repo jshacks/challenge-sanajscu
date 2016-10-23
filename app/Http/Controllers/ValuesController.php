@@ -33,8 +33,28 @@ class ValuesController extends Controller
     				->join('counties', 'indicator_values.county_id', '=', 'counties.id')
 					->where('year', '=', $year)
 					->where('disease', '=', $disease)
-					->select('county as name', 'value as indice', 'json')
+					->select('county as name', 'value as diseaseValue', 'json')
 					->get();
-		echo $values;
+		$newValues =[];
+		foreach($values as $value)
+		{
+			$diseaseValue = 0;
+			foreach($value as $key => $value)
+			{
+				
+				if($key === 'diseaseValue'){
+					$diseaseValue = $value;
+				}
+
+				if($key === 'json')
+				{
+					$arr = json_decode($value, true);
+					$arr['properties']['diseaseValue'] = $diseaseValue;
+					$newValues[] = $arr;
+				}
+
+			}
+		}
+		echo json_encode($newValues);
     }
 }

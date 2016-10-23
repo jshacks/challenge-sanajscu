@@ -20,7 +20,8 @@ Route::get('achizitii',  'AchizitiiController@index')->name('achizitii');
 
 
 Route::get('values', 'ValuesController@index')->name('values');
-
+Route::get('values/diseases', 'ValuesController@getDiseases')->name('values');
+Route::get('values/diseaseYears', 'ValuesController@getAvailableYearsByDisease')->name('values');
 
 Route::get('json-judete',  'JsonEdit@index');
 

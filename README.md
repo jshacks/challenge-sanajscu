@@ -39,6 +39,12 @@ Alexandru Purdila
 Daniel Nitu
 Horeanu Alexandru
 
+## Mission
+- Statistici avansate demografice la nivel judetean, utc, spital.
+- Sondaje reale la nivel de pacient cu ajutorul unui cod unic al pacientului scris in fisa pacientului, ce se poate completa de catre el pe site, dupa ce isi face un cont si este validat.
+- Standardizarea datelor pentru un API open-source din sistemul DRG.ro
+- Traducerea si implementarea intr-o interfata interactiva a codurilor de dignostic si procedurilor internationale.
+
 ## License
 
 MIT © 2016

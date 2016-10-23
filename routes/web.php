@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 
 Route::get('achizitii',  'AchizitiiController@index')->name('achizitii');
+
+
+Route::get('json-judete',  'JsonEdit@index');

@@ -12,7 +12,8 @@ class ValuesController extends Controller
     public function index () {
     	$years = DB::table('indicator_values')->select('year')->get();
     	//$this->getAvailableYearsByDisease('Cancer');
-    	$this->getAvailableDataByDiseaseAndYear('Cancer', 2012);
+    	$this->getDiseases();
+    	//$this->getAvailableDataByDiseaseAndYear('Cancer', 2012);
     }
 
     public function getYears(){
@@ -24,7 +25,8 @@ class ValuesController extends Controller
     					->select('disease')
     					->distinct()
     					->get();
-		return response()->json($diseases);
+    					echo json_encode($diseases);
+		//return response()->json($diseases->toArray());
     }
 
     private function getAvailableYearsByDisease($disease){
@@ -36,7 +38,7 @@ class ValuesController extends Controller
 		return response()->json($years);
     }
 
-    private function getAvailableDataByDiseaseAndYear($disease, $year){
+    public function getAvailableDataByDiseaseAndYear($disease, $year){
     	$values = DB::table('indicator_values')
     				->join('counties', 'indicator_values.county_id', '=', 'counties.id')
 					->where('year', '=', $year)
@@ -63,6 +65,8 @@ class ValuesController extends Controller
 
 			}
 		}
+		echo '{"type":"FeatureCollection","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":';
 		echo json_encode($newValues);
+		echo '}';
     }
 }

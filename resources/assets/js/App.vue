@@ -6,7 +6,7 @@
 		      placeholder="Boala"
 		      :selected="selected"
 		      :options="options"
-		      @update="updateSelected">
+		      @input="updateSelected">
 		    </multiselect>
 		</div>
 		<div class="column">
@@ -14,7 +14,7 @@
 		      placeholder="An"
 		      :selected="selectedYear"
 		      :options="years"
-		      @update="updateSelectedYear">
+		      @input="updateSelectedYear">
 		    </multiselect>
 		</div>
 	</div>
@@ -27,9 +27,10 @@
 
 require("./leaflet.js");
 
+var map;
 function initmap(judete) {
-
-var map = L.map('map').setView([45.94, 24.97], 7);
+var judete = judete;
+map = L.map('map').setView([45.94, 24.97], 7);
 
 	L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 18,
@@ -51,7 +52,7 @@ var map = L.map('map').setView([45.94, 24.97], 7);
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>Data info</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + props.density + ' loc / km<sup>2</sup>'
+			'<b>' + props.name + '</b><br />' + props.diseaseValue + ' incidente'
 			: 'Pune mouse-ul pe un judet');
 	};
 
@@ -77,7 +78,7 @@ var map = L.map('map').setView([45.94, 24.97], 7);
 			color: 'white',
 			dashArray: '3',
 			fillOpacity: 0.7,
-			fillColor: getColor(feature.properties.density)
+			fillColor: getColor(feature.properties.diseaseValue)
 		};
 	}
 
@@ -116,6 +117,9 @@ var map = L.map('map').setView([45.94, 24.97], 7);
 			click: zoomToFeature
 		});
 	}
+
+	console.log('init judete');
+	console.log(judete);
 
 	geojson = L.geoJson(judete, {
 		style: style,
@@ -159,9 +163,9 @@ export default {
     	return {
     		selected: null,
     		selectedYear: null,
-    		options: ['Test', 'test2'],
-    		years: ['2015', '2016'],
-    		judete: 
+    		options: ['Cancer'],
+    		years: ['2012', '2013'],
+    		judete: {}
     	}
     },
     mounted() {
@@ -169,13 +173,16 @@ export default {
     	const self = this;
     	this.$http.get('/values/diseases').then((response) => {
 			// success callback
-			self.options = response.json();
+
+			var el = JSON.parse(response.body);
+			console.log(response.body);
+			//self.options = el;
 		}, (response) => {
 		// error callback
 		});
 		this.$http.get('/values/diseaseYears').then((response) => {
 			// success callback
-			self.years = response.json();
+			// self.years = response.json();
 		}, (response) => {
 		// error callback
 		});
@@ -184,22 +191,23 @@ export default {
 		updateSelected (newSelected) {
     	const self = this;
 			this.selected = newSelected
-			// GET /someUrl
-			this.$http.get('/someUrl').then((response) => {
-			// success callback
-			self.options = response.json();
-			}, (response) => {
-			// error callback
-			});
+			// console.log(newSelected)
+			this.updateData();
 
 		},
 		updateSelectedYear (newSelected) {
     	const self = this;
 			this.selectedYear = newSelected
-			// GET /someUrl
-			this.$http.get('/someUrl').then((response) => {
+			this.updateData();
+		},
+
+		updateData(){
+			this.$http.get('/values/valueByDiseaseAndYear/'+this.selected+'/' + this.selectedYear).then((response) => {
 			// success callback
-			self.options = response.json();
+			self.judete = JSON.parse(response.body);
+			// console.log(self.judete)
+			map.remove();
+			initmap(self.judete)
 			}, (response) => {
 			// error callback
 			});

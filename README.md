@@ -34,6 +34,11 @@ locations:
 ## Documentation inspiration from
 Electron, Atom, contributor-covenant.org
 
+## Team
+Alexandru Purdila
+Daniel Nitu
+Horeanu Alexandru
+
 ## License
 
 MIT © 2016

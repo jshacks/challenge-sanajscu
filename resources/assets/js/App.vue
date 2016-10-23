@@ -163,8 +163,8 @@ export default {
     	return {
     		selected: null,
     		selectedYear: null,
-    		options: ['Cancer'],
-    		years: ['2012', '2013'],
+    		options: ['Cancer', 'Diabet', 'Tbc'],
+    		years: ['2012', '2013', '2014'],
     		judete: {}
     	}
     },

@@ -5,13 +5,13 @@
       </p>
       <ul class="menu-list">
         <li><a href="#">Achizitii</a></li>
-        <li><a href="#">Epidemii</a></li>
+        <li><a href="#" class="is-active" >Epidemii</a></li>
         <li><a href="#">Spitale</a></li>
       </ul>
-      <p class="menu-label">
+      <!--<p class="menu-label">
         Alerte
-      </p>
-      <ul class="menu-list">
+      </p>-->
+      <!--<ul class="menu-list">
         <li><a href="#">Team Settings</a></li>
         <li>
           <a class="is-active" href="#">Manage Your Team</a>
@@ -21,7 +21,7 @@
             <li><a href="#">Add a member</a></li>
           </ul>
         </li>
-      </ul>
+      </ul>-->
 </template>
 
 <script>

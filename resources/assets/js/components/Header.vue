@@ -4,7 +4,7 @@
 			<div class="container is-fluid">
 				<div class="nav-left">
 				  <router-link to="/" class="nav-item is-brand">
-				      <h1>SANAJSCU</h1>
+				      <img src="/sanajscu.png" alt="">
 			      </router-link>
 			    </div>
 

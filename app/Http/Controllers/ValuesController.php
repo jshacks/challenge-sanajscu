@@ -19,13 +19,21 @@ class ValuesController extends Controller
     	echo "year";
     }
 
+    public function getDiseases(){
+    	$diseases = DB::table('indicator_values')
+    					->select('disease')
+    					->distinct()
+    					->get();
+		return response()->json($diseases);
+    }
+
     private function getAvailableYearsByDisease($disease){
     	$years = DB::table('indicator_values')
 					->where('disease', '=', $disease)
     				->select('year')
     				->distinct()
     				->get();
-		echo $years;
+		return response()->json($years);
     }
 
     private function getAvailableDataByDiseaseAndYear($disease, $year){

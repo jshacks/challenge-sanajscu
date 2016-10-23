@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 
 Route::get('achizitii',  'AchizitiiController@index')->name('achizitii');
+
+Route::get('values', 'ValuesController@index')->name('values');

@@ -26,9 +26,8 @@
 <script>
 
 require("./leaflet.js");
-var judete = require("json!./test2.json");
 
-function initmap() {
+function initmap(judete) {
 
 var map = L.map('map').setView([45.94, 24.97], 7);
 
@@ -162,17 +161,48 @@ export default {
     		selectedYear: null,
     		options: ['Test', 'test2'],
     		years: ['2015', '2016'],
+    		judete: 
     	}
     },
     mounted() {
     	initmap();
+    	const self = this;
+    	this.$http.get('/values/diseases').then((response) => {
+			// success callback
+			self.options = response.json();
+		}, (response) => {
+		// error callback
+		});
+		this.$http.get('/values/diseaseYears').then((response) => {
+			// success callback
+			self.years = response.json();
+		}, (response) => {
+		// error callback
+		});
     },
     methods: {
 		updateSelected (newSelected) {
+    	const self = this;
 			this.selected = newSelected
+			// GET /someUrl
+			this.$http.get('/someUrl').then((response) => {
+			// success callback
+			self.options = response.json();
+			}, (response) => {
+			// error callback
+			});
+
 		},
 		updateSelectedYear (newSelected) {
+    	const self = this;
 			this.selectedYear = newSelected
+			// GET /someUrl
+			this.$http.get('/someUrl').then((response) => {
+			// success callback
+			self.options = response.json();
+			}, (response) => {
+			// error callback
+			});
 		}
 	}
 }

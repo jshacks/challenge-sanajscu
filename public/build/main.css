@@ -6297,3 +6297,11 @@ a.panel-block:hover {
 body {
   background: #fafafa;
 }
+
+.column {
+  height: 90vh;
+}
+
+.map {
+  height: 100%;
+}
